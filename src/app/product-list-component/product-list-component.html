@@ -1,0 +1,28 @@
+<p>product-list-component works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (product of products; track p.id) {
+    <tr>
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency:'USD' }}</td>
+      <td>    
+
+    </tr>
+} @empty {
+    <tr>
+        <td colspan="3">No products available.</td>
+    </tr>
+}     
+  </tbody>
+</table>

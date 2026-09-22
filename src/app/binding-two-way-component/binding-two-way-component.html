@@ -1,0 +1,30 @@
+<p>binding-two-way-component works!</p>
+
+<table border="1">
+  <tr>
+    <td colspan="2">Giải phương trình bậc 2: ax² + bx + c = 0</td>
+  </tr>
+  <tr>
+    <td>a:</td>
+    <td><input type="number" [(ngModel)]="hsa"></td>
+  </tr>
+  <tr>
+    <td>b:</td>
+    <td><input type="number" [(ngModel)]="hsb"></td>
+  </tr>
+  <tr>
+    <td>c:</td>
+    <td><input type="number" [(ngModel)]="hsc"></td>
+  </tr>
+  <tr>
+    <td>Result:</td>
+    <td [innerHTML]="result"></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button type="button" (click)="giaiPtb2()">
+        Giải phương trình bậc 2
+      </button>
+    </td>
+  </tr>
+</table>

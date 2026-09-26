@@ -13,6 +13,12 @@ import { BindingTwoWayComponent } from './binding-two-way-component/binding-two-
 import { ProductListComponent } from './product-list-component/product-list-component';
 import { ProductDropdownListComponent } from './product-dropdown-list-component/product-dropdown-list-component';
 import { ProductListCallServiceComponent } from './product-list-call-service-component/product-list-call-service-component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { ProductListCallHttpServiceComponent } from './product-list-call-http-service-component/product-list-call-http-service-component';
+import { ProductHttpHandleErrorServiceComponent } from './product-http-handle-error-service-component/product-http-handle-error-service-component';
+import { Exercise13Component } from './exercise13/exercise13';
+import { Exercise14Component } from './exercise14/exercise14';
+import { Exercise18Component } from './exercise18/exercise18';
 
 @NgModule({
   declarations: [
@@ -27,9 +33,14 @@ import { ProductListCallServiceComponent } from './product-list-call-service-com
     ProductListComponent,
     ProductDropdownListComponent,
     ProductListCallServiceComponent,
+    ProductListCallHttpServiceComponent,
+    ProductHttpHandleErrorServiceComponent,
+    Exercise13Component,
+    Exercise14Component,
+    Exercise18Component,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners()],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [App],
 })
 export class AppModule {}

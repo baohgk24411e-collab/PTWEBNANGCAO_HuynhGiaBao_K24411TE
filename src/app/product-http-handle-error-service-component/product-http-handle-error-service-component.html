@@ -21,7 +21,7 @@ max_price:<input type="number" [(ngModel)]="max_price" />
     </tr>
   </thead>
   <tbody>
-    @for (product of products; track product.id) {
+    @for (product of products(); track product.id) {
     <tr>
       <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>

@@ -9,6 +9,8 @@ import { ProductService } from '../services/product-service';
   templateUrl: './product-list-call-service-component.html',
 })
 export class ProductListCallServiceComponent {
+  min_price: number = 0
+  max_price: number = 10
   products:Product[]=[]
   constructor(private ps:ProductService){
     // this.products = this.ps.getProductList();
@@ -17,5 +19,8 @@ export class ProductListCallServiceComponent {
   ngOnInit():void{
     this.products = this.ps.getProductList();
 // Lúc này, các thành phần đã nạp đầy đủ lên trình duyệt (Vừa có dữ liệu trên bộ nhớ nhưng không thấy trên giao diện, test trên tập dữ liệu rất nhỏ)
+  }
+  callFilterProductListByPrice(){
+    this.products = this.ps.FilterProductListByPrice(this.min_price, this.max_price);
   }
 }
